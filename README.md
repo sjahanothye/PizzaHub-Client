@@ -12,8 +12,8 @@ A modern, responsive, role-based food ordering platform built for **PizzaHub —
 ---
 
 ## 🚀 Live Links & Credentials
-- **Live Client Web App:** `https://pizzahub-app.vercel.app` (or deployment URL)
-- **Live Server REST API:** `https://pizzahub-api.vercel.app`
+- **Live Client Web App:** `https://pizza-hub-client.vercel.app` (or deployment URL)
+- **Live Server REST API:** `https://pizza-hub-server-blond.vercel.app`
 - **Client GitHub Repository:** `https://github.com/sjahanothye/PizzaHub-Client`
 - **Server GitHub Repository:** `https://github.com/sjahanothye/PizzaHub-Server`
 
