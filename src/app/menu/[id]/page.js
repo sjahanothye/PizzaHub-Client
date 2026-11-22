@@ -21,7 +21,6 @@ import {
   ArrowLeft,
   Store,
   AlertTriangle,
-  ExternalLink,
 } from 'lucide-react';
 
 export default function ItemDetailsPage() {
@@ -326,47 +325,10 @@ export default function ItemDetailsPage() {
               </div>
             </div>
             <div className="text-right">
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location}, Bangladesh`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Open in Google Maps"
-                className="inline-flex items-center gap-1.5 text-xs text-pizza-600 hover:text-pizza-700 font-bold hover:underline transition-all"
-              >
-                <MapPin className="w-4 h-4 text-pizza-600 animate-pulse" />
-                <span>{item.location}</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-
-          {/* Interactive Google Maps Preview */}
-          <div className="rounded-2xl border border-border overflow-hidden bg-card shadow-sm">
-            <div className="px-4 py-2.5 bg-muted/60 border-b border-border flex items-center justify-between text-xs">
-              <span className="font-bold flex items-center gap-1.5 text-foreground">
+              <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5 text-pizza-600" />
-                <span>Live Google Map • {item.location}</span>
+                {item.location}
               </span>
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location}, Bangladesh`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-pizza-600 hover:text-pizza-700 font-bold hover:underline"
-              >
-                <span>Directions</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-            <div className="w-full h-44 relative bg-muted">
-              <iframe
-                title={`Google Map location of ${item.location}`}
-                width="100%"
-                height="100%"
-                className="w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(`${item.location}, Dhaka, Bangladesh`)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-              />
             </div>
           </div>
 

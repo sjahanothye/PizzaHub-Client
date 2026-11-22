@@ -101,12 +101,14 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           {/* Dark / Light Mode Toggle */}
           <button
+            type="button"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className="relative w-9 h-9 flex items-center justify-center rounded-xl border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-all shrink-0"
             title="Toggle Theme"
+            aria-label="Toggle Theme"
           >
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <Sun className="h-4 w-4 dark:hidden text-amber-500" />
+            <Moon className="h-4 w-4 hidden dark:block text-pizza-400" />
           </button>
 
           {isAuthenticated ? (
@@ -209,17 +211,20 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-2 md:hidden">
           <button
+            type="button"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-xl text-muted-foreground hover:bg-muted"
+            className="w-9 h-9 flex items-center justify-center rounded-xl border border-border bg-card text-muted-foreground hover:bg-muted shrink-0"
+            title="Toggle Theme"
           >
-            <Sun className="h-5 w-5 dark:hidden" />
-            <Moon className="h-5 w-5 hidden dark:block" />
+            <Sun className="h-4 w-4 dark:hidden text-amber-500" />
+            <Moon className="h-4 w-4 hidden dark:block text-pizza-400" />
           </button>
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl text-muted-foreground hover:bg-muted"
+            className="w-9 h-9 flex items-center justify-center rounded-xl border border-border bg-card text-muted-foreground hover:bg-muted shrink-0"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
