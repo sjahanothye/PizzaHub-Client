@@ -544,44 +544,6 @@ export default function HomePage() {
           })}
         </div>
       </section>
-
-      {/* 6. Recruiter / Evaluator Instant Test Access Drawer */}
-      <section className="container mx-auto px-4">
-        <div className="p-6 sm:p-8 rounded-3xl border-2 border-dashed border-pizza-400 bg-pizza-50/70 dark:bg-pizza-950/20 text-card-foreground">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-pizza-700 dark:text-pizza-300">
-                <Sparkles className="w-4 h-4 text-pizza-600" />
-                <span>Assignment 9 Quick Test Credentials</span>
-              </div>
-              <h4 className="text-xl font-bold">Try All Roles With 1 Click</h4>
-              <p className="text-xs text-muted-foreground">
-                Click below or visit the Sign In page to immediately log in as Admin, Vendor, or Customer.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              <Link
-                href="/sign-in?role=admin"
-                className="px-4 py-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-xs font-bold shadow-sm transition-all hover:scale-105"
-              >
-                👑 Test Admin
-              </Link>
-              <Link
-                href="/sign-in?role=vendor"
-                className="px-4 py-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-xs font-bold shadow-sm transition-all hover:scale-105"
-              >
-                🍕 Test Vendor
-              </Link>
-              <Link
-                href="/sign-in?role=customer"
-                className="px-4 py-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-xs font-bold shadow-sm transition-all hover:scale-105"
-              >
-                👤 Test Customer
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
