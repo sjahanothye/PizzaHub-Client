@@ -1,5 +1,8 @@
 let rawBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 rawBase = rawBase.trim().replace(/\/+$/, '');
+if (!rawBase.startsWith('http://') && !rawBase.startsWith('https://')) {
+  rawBase = `https://${rawBase}`;
+}
 const API_BASE = rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`;
 
 export const getAuthToken = () => {
