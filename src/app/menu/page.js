@@ -26,12 +26,15 @@ const CATEGORIES = [
 
 const LOCATIONS = [
   'All',
-  'New York',
-  'Brooklyn',
-  'Manhattan',
-  'Queens',
-  'Chicago',
-  'Little Italy',
+  'Dhanmondi, Dhaka',
+  'Gulshan, Dhaka',
+  'Banani, Dhaka',
+  'Uttara, Dhaka',
+  'Mirpur, Dhaka',
+  'Bailey Road, Dhaka',
+  'Mohammadpur, Dhaka',
+  'Khilgaon, Dhaka',
+  'Old Dhaka',
 ];
 
 function BrowseMenuContent() {
@@ -216,7 +219,7 @@ function BrowseMenuContent() {
                       {item.itemName}
                     </h2>
                     <span className="text-xl font-black text-pizza-600 shrink-0">
-                      ${item.price?.toFixed(2)}
+                      ৳{item.price}
                     </span>
                   </div>
 

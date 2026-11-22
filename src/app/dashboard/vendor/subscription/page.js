@@ -69,7 +69,7 @@ export default function VendorSubscriptionPage() {
               </div>
 
               <div className="pt-2">
-                <span className="text-4xl font-black text-foreground">$0</span>
+                <span className="text-4xl font-black text-foreground">৳0</span>
                 <span className="text-xs text-muted-foreground"> / month forever</span>
               </div>
 
@@ -113,8 +113,8 @@ export default function VendorSubscriptionPage() {
               </div>
 
               <div className="pt-2">
-                <span className="text-4xl font-black text-pizza-600">$19.99</span>
-                <span className="text-xs text-muted-foreground"> / year access</span>
+                <span className="text-4xl font-black text-pizza-600">৳1,999</span>
+                <span className="text-xs text-muted-foreground"> / year access (BDT)</span>
               </div>
 
               <ul className="space-y-3 pt-4 border-t border-border text-xs text-foreground font-medium">

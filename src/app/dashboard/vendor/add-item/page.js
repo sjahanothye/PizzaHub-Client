@@ -172,7 +172,7 @@ export default function AddMenuItemPage() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-pizza-600 hover:bg-pizza-700 text-white font-bold text-xs shadow-md transition-all hover:scale-105"
             >
               <Sparkles className="w-4 h-4" />
-              <span>Upgrade to Premium ($19.99)</span>
+              <span>Upgrade to Premium (৳1,999)</span>
             </Link>
           </div>
         )}
@@ -213,15 +213,15 @@ export default function AddMenuItemPage() {
               </div>
 
               <div>
-                <label className="block font-bold text-foreground mb-1">Price ($ USD) *</label>
+                <label className="block font-bold text-foreground mb-1">Price (৳ BDT) *</label>
                 <input
                   type="number"
-                  step="0.01"
+                  step="1"
                   required
                   disabled={isLimitReached}
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  placeholder="19.50"
+                  placeholder="850"
                   className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:ring-2 focus:ring-pizza-500 focus:outline-none"
                 />
               </div>
@@ -236,7 +236,7 @@ export default function AddMenuItemPage() {
                 disabled={isLimitReached}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="E.g. Little Italy, New York"
+                placeholder="E.g. Dhanmondi, Dhaka"
                 className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:ring-2 focus:ring-pizza-500 focus:outline-none"
               />
             </div>

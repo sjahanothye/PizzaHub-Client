@@ -66,7 +66,7 @@ function PaymentSuccessContent() {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Amount:</span>
-              <span className="font-bold text-foreground">${transaction.amount?.toFixed(2)} USD</span>
+              <span className="font-bold text-foreground">৳{transaction.amount?.toLocaleString()} BDT</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Status:</span>

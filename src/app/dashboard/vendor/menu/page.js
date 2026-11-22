@@ -172,7 +172,7 @@ export default function MyMenuItemsPage() {
                   <div className="p-5 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="font-bold text-base text-foreground line-clamp-1">{item.itemName}</h3>
-                      <span className="font-black text-pizza-600 text-base shrink-0">${item.price?.toFixed(2)}</span>
+                      <span className="font-black text-pizza-600 text-base shrink-0">৳{item.price}</span>
                     </div>
                     <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
                     <div className="pt-2 flex items-center justify-between text-[11px] text-muted-foreground border-t border-border">
@@ -259,7 +259,7 @@ export default function MyMenuItemsPage() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block font-bold mb-1">Price ($)</label>
+                    <label className="block font-bold mb-1">Price (৳ BDT)</label>
                     <input
                       type="number"
                       step="0.01"

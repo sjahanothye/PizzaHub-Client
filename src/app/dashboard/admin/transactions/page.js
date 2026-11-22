@@ -42,7 +42,7 @@ export default function AdminTransactionsPage() {
             <DollarSign className="w-5 h-5 text-pizza-600" />
             <div>
               <p className="text-[10px] text-muted-foreground uppercase font-bold">Total Platform Revenue</p>
-              <p className="text-lg font-black text-foreground">${totalAmount.toFixed(2)} USD</p>
+              <p className="text-lg font-black text-foreground">৳{totalAmount.toLocaleString()} BDT</p>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function AdminTransactionsPage() {
                     </td>
 
                     <td className="p-4 font-bold text-foreground">
-                      ${tx.amount?.toFixed(2)} {tx.currency || 'USD'}
+                      ৳{tx.amount?.toLocaleString()} {tx.currency || 'BDT'}
                     </td>
 
                     <td className="p-4">

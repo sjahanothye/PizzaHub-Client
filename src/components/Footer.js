@@ -108,11 +108,11 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-pizza-600 shrink-0" />
-                <span>742 Evergreen Terrace, Brooklyn, NY</span>
+                <span>Road 11, Banani, Dhaka, Bangladesh</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-pizza-600 shrink-0" />
-                <span>+1 (800) 749-9248</span>
+                <span>+880 1712-345678</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-pizza-600 shrink-0" />
@@ -125,7 +125,7 @@ export default function Footer() {
         <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} PizzaHub Platform Inc. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Crafted with <Heart className="w-3.5 h-3.5 text-tomato-500 fill-tomato-500 inline" /> for pizza lovers worldwide.
+            Crafted with <Heart className="w-3.5 h-3.5 text-tomato-500 fill-tomato-500 inline" /> for pizza lovers in Dhaka.
           </p>
         </div>
       </div>

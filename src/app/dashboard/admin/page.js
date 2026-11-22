@@ -114,7 +114,7 @@ export default function AdminOverviewPage() {
               <DollarSign className="w-4 h-4" />
             </div>
             <p className="text-[11px] text-muted-foreground font-medium">Platform Revenue</p>
-            <p className="text-xl font-black text-pizza-600">${stats?.totalRevenue?.toFixed(2) || '0.00'}</p>
+            <p className="text-xl font-black text-pizza-600">৳{stats?.totalRevenue?.toLocaleString() || '0'}</p>
           </div>
         </div>
 

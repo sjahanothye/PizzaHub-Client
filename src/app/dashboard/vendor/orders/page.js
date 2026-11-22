@@ -85,7 +85,7 @@ export default function VendorOrdersPage() {
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
                       <h3 className="font-bold text-base text-foreground">{order.item?.itemName}</h3>
-                      <span className="font-black text-pizza-600 text-sm">${order.item?.price?.toFixed(2)}</span>
+                      <span className="font-black text-pizza-600 text-sm">৳{order.item?.price}</span>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">

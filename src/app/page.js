@@ -227,7 +227,7 @@ export default function HomePage() {
                         {item.itemName}
                       </h3>
                       <span className="text-xl font-black text-pizza-600 shrink-0">
-                        ${item.price?.toFixed(2)}
+                        ৳{item.price}
                       </span>
                     </div>
 
@@ -415,17 +415,17 @@ export default function HomePage() {
                 {'★★★★★'}
               </div>
               <p className="text-xs text-muted-foreground italic leading-relaxed">
-                "The Neapolitan Margherita reminded me of the wood-fired pizzerias in Naples. Arrived piping hot in 25 minutes!"
+                "The Neapolitan Margherita crust is pure art! Arrived steaming hot in Dhanmondi in just 25 minutes."
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <img
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&q=80"
-                  alt="John"
+                  alt="Tanvir"
                   className="w-8 h-8 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-xs font-bold text-foreground">John Miller</p>
-                  <p className="text-[10px] text-muted-foreground">Brooklyn, NY</p>
+                  <p className="text-xs font-bold text-foreground">Tanvir Ahmed</p>
+                  <p className="text-[10px] text-muted-foreground">Dhanmondi, Dhaka</p>
                 </div>
               </div>
             </div>
@@ -435,7 +435,7 @@ export default function HomePage() {
                 {'★★★★★'}
               </div>
               <p className="text-xs text-muted-foreground italic leading-relaxed">
-                "As a restaurant owner, the Vendor Dashboard makes publishing pizzas and managing incoming orders effortless. Upgraded to Premium!"
+                "As a pizzeria owner, the Vendor Dashboard makes publishing pizzas and managing incoming orders effortless. Upgraded to Premium!"
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <img
@@ -445,7 +445,7 @@ export default function HomePage() {
                 />
                 <div>
                   <p className="text-xs font-bold text-foreground">Marco Rossi</p>
-                  <p className="text-[10px] text-muted-foreground">Bella Napoli Artisan</p>
+                  <p className="text-[10px] text-muted-foreground">Bella Napoli Pizzeria</p>
                 </div>
               </div>
             </div>
@@ -455,17 +455,17 @@ export default function HomePage() {
                 {'★★★★★'}
               </div>
               <p className="text-xs text-muted-foreground italic leading-relaxed">
-                "Best pizza ordering experience ever! The status timeline on my customer dashboard kept me updated every step of the way."
+                "Best pizza ordering experience in Dhaka! The status timeline on my customer dashboard kept me updated every step of the way."
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80"
-                  alt="Sarah"
+                  alt="Sadia"
                   className="w-8 h-8 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-xs font-bold text-foreground">Sarah Jenkins</p>
-                  <p className="text-[10px] text-muted-foreground">Manhattan, NY</p>
+                  <p className="text-xs font-bold text-foreground">Sadia Islam</p>
+                  <p className="text-[10px] text-muted-foreground">Gulshan, Dhaka</p>
                 </div>
               </div>
             </div>

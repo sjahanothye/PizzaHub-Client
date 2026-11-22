@@ -143,7 +143,7 @@ export default function ManageMenuItemsPage() {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-base text-foreground">{item.itemName}</h3>
-                    <span className="font-black text-pizza-600 text-sm">${item.price?.toFixed(2)}</span>
+                    <span className="font-black text-pizza-600 text-sm">৳{item.price}</span>
                   </div>
 
                   <p className="text-xs text-muted-foreground line-clamp-1">{item.description}</p>

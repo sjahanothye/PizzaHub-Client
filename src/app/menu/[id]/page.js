@@ -300,7 +300,7 @@ export default function ItemDetailsPage() {
 
             {/* Price & Rating */}
             <div className="flex items-center gap-4 pt-1">
-              <span className="text-3xl font-black text-pizza-600">${item.price?.toFixed(2)}</span>
+              <span className="text-3xl font-black text-pizza-600">৳{item.price}</span>
               <div className="flex items-center gap-1 px-3 py-1 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 rounded-full text-xs font-bold">
                 <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
                 <span>{averageRating} / 5</span>
@@ -476,7 +476,7 @@ export default function ItemDetailsPage() {
                 <p className="text-sm font-bold truncate text-foreground">{item.itemName}</p>
                 <p className="text-xs text-muted-foreground">{item.category}</p>
               </div>
-              <span className="text-base font-black text-pizza-600">${item.price?.toFixed(2)}</span>
+              <span className="text-base font-black text-pizza-600">৳{item.price}</span>
             </div>
 
             <form onSubmit={handleOrderSubmit} className="space-y-4">
