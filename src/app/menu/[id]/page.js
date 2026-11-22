@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { fetchApi } from '../../../lib/api';
 import { useAuth } from '../../../context/AuthContext';
+import { triggerConfetti } from '../../../lib/confetti';
 import { toast } from 'sonner';
 import {
   MapPin,
@@ -23,6 +24,18 @@ import {
   AlertTriangle,
 } from 'lucide-react';
 
+const SIZES = [
+  { id: 'regular', name: 'Regular', inches: '8-inch', delta: -150, slices: '4 Slices' },
+  { id: 'medium', name: 'Medium', inches: '10-inch', delta: 0, slices: '6 Slices (Standard)' },
+  { id: 'large', name: 'Large', inches: '12-inch', delta: 250, slices: '8 Slices' },
+];
+
+const CRUSTS = [
+  { id: 'classic', name: 'Hand-Tossed Classic', extra: 0 },
+  { id: 'crispy', name: 'Thin & Crispy', extra: 40 },
+  { id: 'cheese-burst', name: 'Stuffed Cheese Burst', extra: 120 },
+];
+
 export default function ItemDetailsPage() {
   const { id } = useParams();
   const router = useRouter();
@@ -31,6 +44,10 @@ export default function ItemDetailsPage() {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
+
+  // Pizza Customization states
+  const [selectedSize, setSelectedSize] = useState('medium');
+  const [selectedCrust, setSelectedCrust] = useState('classic');
 
   // Order modal state
   const [orderModalOpen, setOrderModalOpen] = useState(false);
@@ -113,6 +130,10 @@ export default function ItemDetailsPage() {
     }
   };
 
+  const activeSize = SIZES.find((s) => s.id === selectedSize) || SIZES[1];
+  const activeCrust = CRUSTS.find((c) => c.id === selectedCrust) || CRUSTS[0];
+  const dynamicPrice = item ? Math.max(150, item.price + activeSize.delta + activeCrust.extra) : 0;
+
   const handleOpenOrderModal = () => {
     if (!isAuthenticated) {
       toast.info('Please sign in with your customer account to place an order.');
@@ -129,6 +150,9 @@ export default function ItemDetailsPage() {
       toast.error('Vendors cannot order their own menu items.');
       return;
     }
+
+    // Prepopulate message with size & crust options
+    setMessage(`Size: ${activeSize.name} (${activeSize.inches}), Crust: ${activeCrust.name}`);
 
     // Set default tomorrow date
     const tomorrow = new Date();
@@ -158,6 +182,7 @@ export default function ItemDetailsPage() {
       });
 
       if (res.success) {
+        triggerConfetti();
         toast.success('Order placed successfully! 🍕 Check your Customer Dashboard to track status.');
         setOrderModalOpen(false);
         router.push('/dashboard/customer/orders');
@@ -300,7 +325,7 @@ export default function ItemDetailsPage() {
 
             {/* Price & Rating */}
             <div className="flex items-center gap-4 pt-1">
-              <span className="text-3xl font-black text-pizza-600">৳{item.price}</span>
+              <span className="text-3xl font-black text-pizza-600">৳{dynamicPrice || item.price}</span>
               <div className="flex items-center gap-1 px-3 py-1 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 rounded-full text-xs font-bold">
                 <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
                 <span>{averageRating} / 5</span>
@@ -329,6 +354,69 @@ export default function ItemDetailsPage() {
                 <MapPin className="w-3.5 h-3.5 text-pizza-600" />
                 {item.location}
               </span>
+            </div>
+          </div>
+
+          {/* Pizza Customization: Size & Crust Selection */}
+          <div className="p-5 rounded-3xl bg-card border border-border space-y-4 shadow-sm">
+            {/* Size Options */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-foreground">Select Pizza Size:</span>
+                <span className="text-[10px] text-pizza-600 font-semibold">{activeSize.inches} • {activeSize.slices}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {SIZES.map((s) => {
+                  const sizePrice = Math.max(150, item.price + s.delta);
+                  const isSelected = selectedSize === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      onClick={() => setSelectedSize(s.id)}
+                      className={`p-2.5 rounded-2xl border text-center transition-all ${
+                        isSelected
+                          ? 'border-pizza-600 bg-pizza-50/70 dark:bg-pizza-950/40 text-pizza-600 shadow-sm ring-1 ring-pizza-500'
+                          : 'border-border hover:bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      <p className="text-xs font-bold">{s.name}</p>
+                      <p className="text-[10px] opacity-75">{s.inches}</p>
+                      <p className="text-[11px] font-black mt-1 text-foreground">৳{sizePrice}</p>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Crust Options */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-foreground">Select Crust Type:</span>
+                <span className="text-[10px] text-muted-foreground font-normal">Freshly stretched</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {CRUSTS.map((c) => {
+                  const isSelected = selectedCrust === c.id;
+                  return (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() => setSelectedCrust(c.id)}
+                      className={`p-2.5 rounded-2xl border text-center transition-all ${
+                        isSelected
+                          ? 'border-pizza-600 bg-pizza-50/70 dark:bg-pizza-950/40 text-pizza-600 shadow-sm ring-1 ring-pizza-500'
+                          : 'border-border hover:bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      <p className="text-[11px] font-bold leading-tight">{c.name}</p>
+                      <p className="text-[10px] text-pizza-600 font-semibold mt-0.5">
+                        {c.extra > 0 ? `+৳${c.extra}` : 'Included'}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

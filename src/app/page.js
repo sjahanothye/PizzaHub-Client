@@ -18,6 +18,8 @@ import {
   UtensilsCrossed,
   Truck,
   CheckCircle2,
+  ChevronDown,
+  HelpCircle,
 } from 'lucide-react';
 
 const CATEGORIES = [
@@ -59,9 +61,38 @@ const CATEGORIES = [
   },
 ];
 
+const FAQS = [
+  {
+    question: 'How fast is pizza delivery across Dhaka?',
+    answer:
+      'Our partner artisan pizzerias bake on demand and dispatch in heated insulated thermal boxes. Deliveries to Dhanmondi, Gulshan, Banani, Uttara, Mirpur, and Bailey Road typically arrive in 30 to 45 minutes.',
+  },
+  {
+    question: 'What payment methods are supported for customer orders?',
+    answer:
+      'Customers pay via Cash on Doorstep Delivery upon receiving their fresh hot pizza. There is no need to enter credit card details in advance to place food orders.',
+  },
+  {
+    question: 'How can a restaurant or cloud kitchen join PizzaHub?',
+    answer:
+      "Simply sign up with a 'Vendor (Restaurant Owner)' account. Free tier vendors can immediately publish up to 3 active menu items. Upgrading to the Premium Partner plan unlocks unlimited items, a verified badge, and featured homepage spots.",
+  },
+  {
+    question: 'Can I customize the pizza crust and size before ordering?',
+    answer:
+      'Yes! On each pizza\'s details page, you can choose between Regular (8"), Medium (10"), and Large (12") sizes, plus crust styles including Classic Hand-Tossed, Thin & Crispy, or Stuffed Cheese Burst.',
+  },
+  {
+    question: 'Can I cancel an order after placing it?',
+    answer:
+      "Yes, you can cancel any pending order with 1 click directly from your Customer Dashboard ('My Orders') before the pizzeria accepts and prepares it.",
+  },
+];
+
 export default function HomePage() {
   const [featuredItems, setFeaturedItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     async function loadFeatured() {
@@ -470,6 +501,47 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 5. Frequently Asked Questions (FAQ) Accordion */}
+      <section className="container mx-auto px-4 max-w-4xl space-y-8">
+        <div className="text-center space-y-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-pizza-600 flex items-center justify-center gap-1.5">
+            <HelpCircle className="w-3.5 h-3.5" /> Have Questions?
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-foreground">Frequently Asked Questions</h2>
+          <p className="text-muted-foreground text-sm">Everything you need to know about ordering and partnering with PizzaHub.</p>
+        </div>
+
+        <div className="space-y-3">
+          {FAQS.map((faq, idx) => {
+            const isOpen = openFaq === idx;
+            return (
+              <div
+                key={idx}
+                className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-colors"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(isOpen ? null : idx)}
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-foreground hover:text-pizza-600 transition-colors"
+                >
+                  <span>{faq.question}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-pizza-600 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-5 pb-5 text-xs text-muted-foreground leading-relaxed border-t border-border/50 pt-3 animate-in fade-in duration-200">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 

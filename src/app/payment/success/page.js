@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { fetchApi } from '../../../lib/api';
 import { CheckCircle2, Sparkles, LayoutDashboard } from 'lucide-react';
+import { triggerConfetti } from '../../../lib/confetti';
 import { toast } from 'sonner';
 
 function PaymentSuccessContent() {
@@ -29,6 +30,7 @@ function PaymentSuccessContent() {
 
         if (res.success && res.transaction) {
           setTransaction(res.transaction);
+          triggerConfetti();
           toast.success('Your Premium Subscription has been verified! 🌟');
         }
       } catch (err) {
