@@ -14,8 +14,8 @@ A modern, responsive, role-based food ordering platform built for **PizzaHub —
 ## 🚀 Live Links & Credentials
 - **Live Client Web App:** `https://pizzahub-app.vercel.app` (or deployment URL)
 - **Live Server REST API:** `https://pizzahub-api.vercel.app`
-- **Client GitHub Repository:** `https://github.com/your-username/pizzahub-client`
-- **Server GitHub Repository:** `https://github.com/your-username/pizzahub-server`
+- **Client GitHub Repository:** `https://github.com/sjahanothye/PizzaHub-Client`
+- **Server GitHub Repository:** `https://github.com/sjahanothye/PizzaHub-Server`
 
 ### 🔑 Test Credentials (1-Click Quick Fill on Sign-In Page)
 | Role | Email | Password | Access / Plan |
