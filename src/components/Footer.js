@@ -106,9 +106,16 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4 tracking-wider uppercase text-foreground">Contact Us</h3>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-pizza-600 shrink-0" />
-                <span>Road 11, Banani, Dhaka, Bangladesh</span>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Road+11,+Banani,+Dhaka,+Bangladesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-pizza-600 transition-colors group"
+                >
+                  <MapPin className="w-4 h-4 text-pizza-600 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>Road 11, Banani, Dhaka, Bangladesh</span>
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-pizza-600 shrink-0" />
