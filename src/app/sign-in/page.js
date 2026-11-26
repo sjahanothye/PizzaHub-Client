@@ -89,32 +89,45 @@ function SignInContent() {
         </div>
 
         {/* Quick Demo Fill Buttons for Recruiter Testing */}
-        <div className="p-4 rounded-2xl border border-dashed border-pizza-300 dark:border-pizza-800 bg-pizza-50/50 dark:bg-pizza-950/20 space-y-2">
-          <p className="text-[11px] font-bold text-center text-pizza-700 dark:text-pizza-300 flex items-center justify-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-pizza-600" /> 1-Click Role Testing Quick Fill:
-          </p>
+        <div className="p-4 rounded-2xl border-2 border-dashed border-pizza-400 bg-pizza-50/80 dark:bg-pizza-950/30 space-y-3">
+          <div className="text-center space-y-0.5">
+            <p className="text-xs font-black text-pizza-700 dark:text-pizza-300 flex items-center justify-center gap-1">
+              <Sparkles className="w-3.5 h-3.5 text-pizza-600" /> Examiner &amp; Demo Test Credentials:
+            </p>
+            <p className="text-[10px] text-muted-foreground">Click a role below to 1-click auto-fill credentials:</p>
+          </div>
           <div className="grid grid-cols-3 gap-2">
             <button
               type="button"
               onClick={() => handleQuickFill('admin')}
-              className="py-1.5 px-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-[10px] font-bold shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl bg-card border-2 border-pizza-500 text-[11px] font-black shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1 text-pizza-600"
             >
-              <ShieldCheck className="w-3 h-3 text-pizza-600" /> Admin
+              <ShieldCheck className="w-3.5 h-3.5" /> 👑 Admin
             </button>
             <button
               type="button"
               onClick={() => handleQuickFill('vendor')}
-              className="py-1.5 px-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-[10px] font-bold shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-[11px] font-bold shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1 text-foreground"
             >
-              <Store className="w-3 h-3 text-pizza-600" /> Vendor
+              <Store className="w-3.5 h-3.5 text-pizza-600" /> 🍕 Vendor
             </button>
             <button
               type="button"
               onClick={() => handleQuickFill('customer')}
-              className="py-1.5 px-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-[10px] font-bold shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl bg-card border border-border hover:border-pizza-500 text-[11px] font-bold shadow-sm transition-all hover:scale-105 flex items-center justify-center gap-1 text-foreground"
             >
-              <User className="w-3 h-3 text-pizza-600" /> Customer
+              <User className="w-3.5 h-3.5 text-pizza-600" /> 👤 Customer
             </button>
+          </div>
+          <div className="p-2.5 rounded-xl bg-card border border-border text-[10px] space-y-1 font-mono">
+            <div className="flex justify-between items-center text-foreground font-semibold">
+              <span>Admin Email:</span>
+              <span className="text-pizza-600 select-all font-bold">admin@pizzahub.com</span>
+            </div>
+            <div className="flex justify-between items-center text-foreground font-semibold">
+              <span>Admin Password:</span>
+              <span className="text-pizza-600 select-all font-bold">Admin123!</span>
+            </div>
           </div>
         </div>
 
